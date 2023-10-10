@@ -8,6 +8,7 @@ public class Camera_Movement : MonoBehaviour
     public Transform player;
     public float speed;
     public Vector3 offset;
+    Vector3 desiredPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,13 @@ public class Camera_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 desiredPos = player.position + offset;
-        transform.position = Vector3.Lerp(transform.position, desiredPos, speed * Time.deltaTime);
+        desiredPos = player.position + offset;
+        //transform.position = Vector3.Lerp(transform.position, desiredPos, speed * Time.deltaTime);
+    }
+
+    void FixedUpdate()
+    {
+        //Vector3 desiredPos = player.position + offset;
+        transform.position = Vector3.Lerp(transform.position, desiredPos, speed * Time.fixedDeltaTime);
     }
 }
