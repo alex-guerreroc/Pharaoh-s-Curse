@@ -25,7 +25,13 @@ public class escorpion : MonoBehaviour
     void Update()
     {
         playerPosition=GameObject.FindWithTag("Player").transform;
-        goPosition=Vector2.MoveTowards(gameObject.transform.position,playerPosition.position-offset,speed*Time.deltaTime);
+        
+        
+    }
+
+    void FixedUpdate()
+    {
+        goPosition=Vector2.MoveTowards(gameObject.transform.position,playerPosition.position-offset,speed*Time.fixedDeltaTime);
         hitbox.MovePosition(goPosition);
     }
 }
