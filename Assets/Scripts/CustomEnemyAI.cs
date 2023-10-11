@@ -16,16 +16,30 @@ public class CustomEnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+    SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
     {
         seeker=GetComponent<Seeker>();
         rb=GetComponent<Rigidbody2D>();
+        sr=transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         InvokeRepeating("UpdatePath",0f,.5f);
 
 
+    }
+
+    void Update()
+    {
+        if(target.position.x < transform.position.x)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
     }
 
     void UpdatePath()
