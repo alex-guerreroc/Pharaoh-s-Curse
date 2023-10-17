@@ -361,6 +361,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Pharaohs Curse TestTiles_12
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be88c036597a9fb4b9e78a50c8734a5f
+      internalID: -1929960423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pharaohs Curse TestTiles_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46def75a6c189474d8eafaa6162089d6
+      internalID: 1819747866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pharaohs Curse TestTiles_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef589fc34aacb047afe0efe41acfe51
+      internalID: -118141967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pharaohs Curse TestTiles_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f235ef0cf0fc548479bdcd76d3c0058a
+      internalID: 1806696402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pharaohs Curse TestTiles_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98917d7f48a07864398ec72fb802fc95
+      internalID: -1199449123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -376,6 +481,11 @@ TextureImporter:
       Pharaohs Curse TestTiles_1: -178079805
       Pharaohs Curse TestTiles_10: -297463311
       Pharaohs Curse TestTiles_11: 819148634
+      Pharaohs Curse TestTiles_12: -1929960423
+      Pharaohs Curse TestTiles_13: 1819747866
+      Pharaohs Curse TestTiles_14: -118141967
+      Pharaohs Curse TestTiles_15: 1806696402
+      Pharaohs Curse TestTiles_16: -1199449123
       Pharaohs Curse TestTiles_2: -1635333652
       Pharaohs Curse TestTiles_3: -1500745271
       Pharaohs Curse TestTiles_4: -1467673417

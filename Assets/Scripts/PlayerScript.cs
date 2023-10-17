@@ -8,9 +8,17 @@ public class PlayerScript : MonoBehaviour
     public float baseSpeed;
     private Vector2 direction;
     public float sprintSpeedMultiplier;
+    public float tiredSpeedMultiplier;
+    public float sprintDrainPerSec;
+    public float sprintGainPerSec;
     private float currentSpeed;
     public double staminaValue;
     private double staminaValueCounter;
+    private bool Tired = false;
+    private bool Sprinting = false;
+
+    public enum MovementType {Walking, Sprinting, Tired}
+    MovementType Movement;
     
     void Start()
     {
@@ -24,46 +32,50 @@ public class PlayerScript : MonoBehaviour
     
 
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && staminaValueCounter>10)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && Movement != MovementType.Tired)
         {
-            currentSpeed=baseSpeed*sprintSpeedMultiplier;
+            Movement = MovementType.Sprinting;
         }
-        if(Input.GetKeyUp(KeyCode.LeftShift) || staminaValueCounter==0)
+        if(Input.GetKeyUp(KeyCode.LeftShift) && Movement != MovementType.Tired)
         {
-            currentSpeed=baseSpeed;
-        }
-
-        staminaValueCounter=staminaValueCounter+0.2;
-
-
-        if(currentSpeed>baseSpeed)
-        {
-            staminaValueCounter--;
-        }
-        if(staminaValueCounter<0)
-        {
-            staminaValueCounter=0;
-        }
-        if (staminaValueCounter>staminaValue)
-        {
-            staminaValueCounter=staminaValue;
+            Movement = MovementType.Walking;
         }
 
-        /*currentSpeed=baseSpeed;
-        if(Input.GetKey(KeyCode.LeftShift))
+        switch(Movement)
         {
-            currentSpeed = baseSpeed*sprintSpeedMultiplier;
-            if(staminaValueCounter > 0)
-            {
-                staminaValueCounter-= Time.deltaTime/3;
-            }
+            case MovementType.Walking:
+                currentSpeed=baseSpeed;
+                break;
+            case MovementType.Sprinting:
+                currentSpeed=baseSpeed*sprintSpeedMultiplier;
+                break;
+            case MovementType.Tired:
+                currentSpeed=baseSpeed*tiredSpeedMultiplier;
+                break;
+        }
+
+        if(Movement == MovementType.Sprinting && staminaValueCounter>0)
+        {
+            staminaValueCounter -= Time.deltaTime * sprintDrainPerSec;
         }
         else if(staminaValueCounter<staminaValue)
         {
-            staminaValueCounter-= Time.deltaTime/6;
-        }*/
+            staminaValueCounter += Time.deltaTime * sprintGainPerSec;
+        }
 
-
+        if(staminaValueCounter<=0)
+        {
+            staminaValueCounter=0;
+            Movement = MovementType.Tired;
+        }
+        if (staminaValueCounter>=60 && Movement == MovementType.Tired)
+        {
+            Movement = MovementType.Walking;
+        }
+        if (staminaValueCounter>=staminaValue)
+        {
+            staminaValueCounter=staminaValue;
+        }
 
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
