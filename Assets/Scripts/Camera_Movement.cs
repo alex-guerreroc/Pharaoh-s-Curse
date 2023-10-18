@@ -26,17 +26,15 @@ public class Camera_Movement : MonoBehaviour
     {
         //Vector3 desiredPos = player.position + offset;
         Dist = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
-        
+
         /*
         if(Dist.magnitude > 1f)
         {
             //transform.position = player.position - 1*(new Vector3(Dist.x, Dist.y, 0)/Dist.magnitude) + offset;
-            Debug.Log("Max");
         }
         else
         {
             transform.position = Vector3.Lerp(transform.position, desiredPos, speed * Time.fixedDeltaTime);
-            Debug.Log("Norm");
         }
         */
 
@@ -44,12 +42,10 @@ public class Camera_Movement : MonoBehaviour
         if(Dist.magnitude > 1.25f && rb.velocity.magnitude != 0f)
         {
             transform.position += new Vector3(rb.velocity.x, rb.velocity.y, 0) * Time.fixedDeltaTime;
-            Debug.Log("Max");
         }
         else
         {
             transform.position = Vector3.Lerp(transform.position, desiredPos, speed * Time.fixedDeltaTime);
-            Debug.Log("Norm");
         }
     }
 }
