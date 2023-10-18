@@ -81,11 +81,12 @@ public class PlayerScript : MonoBehaviour
 
         
 
-        Debug.Log(staminaValueCounter);
+        //Debug.Log(staminaValueCounter);
 
     }
     void FixedUpdate()
     {
+        //rb.AddForce(direction.normalized * currentSpeed,ForceMode2D.Impulse);
         rb.velocity = (direction.normalized * currentSpeed);
     }
 }
